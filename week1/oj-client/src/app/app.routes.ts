@@ -21,3 +21,5 @@ const routes: Router = [
         redirectTo: 'problems'
     }
 ]
+
+export const routing = RouterModule.forRoot(routes);
