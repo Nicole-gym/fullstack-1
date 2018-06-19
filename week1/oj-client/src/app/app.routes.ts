@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { ProblemDetailComponent } from './components/problem-detail/problem-detail.component';
 
-const routes: Router = [
+const routes: Routes = [
     {
         path: '',
         redirectTo: 'problems',
