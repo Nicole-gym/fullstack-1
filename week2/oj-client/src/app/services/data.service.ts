@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Problem } from '../models/problem.model';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Obeservable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
