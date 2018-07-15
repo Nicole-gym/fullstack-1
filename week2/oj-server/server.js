@@ -8,6 +8,6 @@ const mongoose = require('mongoose');
 app.use('/api/v1', restRouter);
 
 
-mongoose.connect('mongodb://Nicole-gym:nicole-gym123@ds235239.mlab.com:35239/problems');
+mongoose.connect('mongodb://Nicole-gym:nicole-gym123@ds235239.mlab.com:35239/problems',{ useNewUrlParser: true });
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
