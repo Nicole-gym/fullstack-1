@@ -8,9 +8,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class DataService {
   //list of problems
   // problems: Problem[] = PROBLEMS;
-  private _problemSource = new BehaviorSubject;
-
-  constructor() { }
 
   private _problemSource = new BehaviorSubject<Problem[]>([]);
 
