@@ -258,6 +258,7 @@ var EditorComponent = /** @class */ (function () {
             _this.sessionId = params['id'];
             _this.initEditor();
         });
+        this.collaboration.restoreBuffer();
     };
     EditorComponent.prototype.initEditor = function () {
         var _this = this;
@@ -564,6 +565,9 @@ var CollaborationService = /** @class */ (function () {
     CollaborationService.prototype.change = function (delta) {
         this.collaborationSocket.emit("change", delta);
     };
+    CollaborationService.prototype.restoreBuffer = function () {
+        this.collaborationSocket.emit("restoreBuffer");
+    };
     CollaborationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [])
@@ -708,7 +712,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/guoyiming/fullstack-1/week2/oj-client/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/guoyiming/fullstack-1/week3/oj-client/src/main.ts */"./src/main.ts");
 
 
 /***/ })
