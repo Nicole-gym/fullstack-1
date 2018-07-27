@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CollaborationService } from '../../services/collaboration.service';
 import { ActivatedRoute, Params, Data } from '@angular/router';
-import {DataService} from '../../services/data.service';
+import { DataService } from '../../services/data.service';
 
 declare var ace: any;
 
@@ -29,8 +29,7 @@ export class EditorComponent implements OnInit {
   output: string = '';
 
   constructor(private collaboration: CollaborationService,
-	  private route: ActivatedRoute,
-		private dataService: DataService) { }
+	  private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
   	this.route.params
@@ -66,20 +65,20 @@ export class EditorComponent implements OnInit {
   }
 
   setLanguage(language: string): void {
-  	this.language = language;
-  	this.resetEditor();
-  }
+	this.language = language;
+	this.resetEditor();
+}
 
-  submit(): void {
-  	let userCode = this.editor.getValue();
-	  console.log(userCode);
-	  
-	  const data = {
-		  usercode: userCode,
-		  lang: this.language.toLocaleLowerCase();
-	  };
+submit(): void {
+	let userCode = this.editor.getValue();
+	console.log(userCode);
 
-	  this.dataService.buildAndRun(data).then(res => this.output = res.text);
-  }
+  const data = {
+	usercode: userCode,
+	lang: this.language.toLocaleLowerCase()
+  };
+
+  this.dataService.buildAndRun(data).then(res => this.output = res);
+}
 
 }

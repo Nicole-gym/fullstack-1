@@ -8,7 +8,7 @@ from docker.errors import ContainerError
 from docker.errors import ImageNotFound
 
 CURRENT_DIR = os.path.dirname(os.path.relpath(__file__))
-IMAGE_NAME = 'thomas/cs503'
+IMAGE_NAME = 'yimingguo92'
 
 client = docker.from_env()
 
@@ -17,26 +17,26 @@ CONTAINER_NAME = "%s:latest" % IMAGE_NAME
 
 SOURCE_FILE_NAMES = {
 	"java": "Example.java",
-	"python": "example.py",
-	"c++": "example.cpp"
+	"python": "example.py"
+	# "c++": "example.cpp"
 }
 
 BINARY_NAMES = {
 	"java": "Example",
-	"python": "example.py",
-	"c++": "./a.out"
+	"python": "example.py"
+	# "c++": "./a.out"
 }
 
 BUILD_COMMANDS = {
 	"java": "javac",
-	"python": "python3",
-	"c++": "g++"
+	"python": "python3"
+	# "c++": "g++"
 }
 
 EXECUTE_COMMANDS = {
 	"java": "java",
-	"python": "python3",
-	"c++": ""
+	"python": "python3"
+	# "c++": ""
 }
 
 def load_image():
@@ -45,7 +45,7 @@ def load_image():
 		print("Image exists locally")
 	except ImageNotFound:
 		print("image not found locally, loading from docker hub")
-		client.image.pull(IMAGE_NAME)
+		client.images.pull(IMAGE_NAME)
 	except APIError:
 		print("Can't connect to docker")
 		return

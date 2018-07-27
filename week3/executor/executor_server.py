@@ -22,8 +22,7 @@ def build_and_run():
 	return jsonify(result)
 
 if __name__ == '__main__':   ##当直接调用executor_server时，__name__ == __main__
-	import sys
-	port = int(sys.argv[1])
-	eu.load_image()     #docker容器起来
-	app.run(port = port)
-    app.run(debbug = True)  ##当debugweitrue时，当改动代码时，会自动从新build
+	# import sys
+	# port = int(sys.argv[1])
+	eu.load_image()     #docker容器起来# app.run(port = port)
+	app.run(debug=True)
